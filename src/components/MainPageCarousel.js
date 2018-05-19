@@ -38,14 +38,16 @@ class MainPageCarousel extends React.Component {
     // this.props.openShopModal(this.state.image1)
   }
   render() {
-    let { images, imagesDisplayed, settings} = this.props
+    let { images, imagesDisplayed, settings, openImageModal} = this.props
     return (
       <div className='container main_carousel'>
       <Slider {...settings}>
         {images.map((slide, i) => {
           return (
             <div key={i}>
-             <img  src={require(`../images/highlights/${slide}.jpg`)} />
+             <img onClick={()=>{
+               openImageModal(slide);
+             }}  src={require(`../images/highlights/untitled-${slide}.jpg`)} />
             </div>
           );
         })}

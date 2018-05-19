@@ -3,11 +3,14 @@ import logo from './logo.svg';
 import Header from './components/Header';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import MainPageCarousel from './components/MainPageCarousel';
+import ImageModal from './components/ImageModal';
 
 class App extends Component {
   state={
     navIsOpen:'',
     active:'',
+    imageModalIsOpen:false,
+    currentImage:''
   }
   openNav=()=>{
     this.setState({
@@ -22,10 +25,23 @@ class App extends Component {
       active:''
     })
   }
+  openImageModal=(image)=> {
+    this.setState({
+      imageModalIsOpen: true,
+      currentImage:image
+    });
+  }
+  closeModal=()=> {
+    this.setState({
+      imageModalIsOpen: false,
+    });
+  }
   render() {
     let { 
       navIsOpen,
-      active
+      active,
+      imageModalIsOpen,
+      currentImage
 
     
     } = this.state
@@ -33,6 +49,12 @@ class App extends Component {
       <div className="App">
         <Router >
           <div>
+          <ImageModal
+            imageModalIsOpen={imageModalIsOpen}
+            openImageModal={this.openImageModal}
+            closeModal={this.closeModal}
+            image={currentImage}
+          />
           <Header
             navIsOpen={navIsOpen}
             active={active}
@@ -40,7 +62,7 @@ class App extends Component {
             closeNav={this.closeNav}
           />
           < MainPageCarousel 
-            images = {['untitled-5','untitled-6']}
+            images = {['115','116']}
             settings = {{
                 className: "center",
                 centerMode: true,
@@ -48,6 +70,7 @@ class App extends Component {
                 slidesToShow: 1,
                 speed: 500,
             }}
+            openImageModal={this.openImageModal}
           />
 
             test
