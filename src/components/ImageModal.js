@@ -18,10 +18,9 @@ render() {
           className="Modal"
           overlayClassName="overlay"
         >
-          <div className="col">
+          <div className="main_modal_image">
                 <div className='col'>
-                    <h4>tes</h4>
-                    <img className="modal-food-item" src={image!== '' ? require(`../images/highlights/untitled-${image}.jpg`) : ''} alt={"product-image"} width="300px"></img>
+                    <img className="modal_image_item" src={image!== '' ? require(`../images/highlights/untitled-${image}.jpg`) : ''} alt={"product-image"} width="300px"></img>
                 </div>
                 <div className='close-modal' onClick={()=>closeModal()}>X</div>
            

@@ -68,7 +68,9 @@ class App extends Component {
                 centerMode: true,
                 infinite: true,
                 slidesToShow: 1,
-                speed: 500,
+                speed: 1500,
+                autoplay:true,
+                autoplaySpeed: 4000,
             }}
             openImageModal={this.openImageModal}
           />

@@ -290,6 +290,10 @@ table {
   right: 0;
   padding: 5px; }
 
+.main_modal_image img {
+  width: 100%;
+  margin-top: 4%; }
+
 #nav-icon {
   width: 100px;
   position: relative;
@@ -366,7 +370,7 @@ table {
   left: 50%; }
 
 .navbar {
-  background: #1a75cf;
+  background: #9932CC;
   justify-content: center;
   position: relative;
   display: flex;
@@ -377,7 +381,7 @@ table {
   position: absolute;
   top: 100%;
   right: 0%;
-  background: #6a9bcd;
+  background: #ddd;
   z-index: 1001;
   border: solid white;
   display: none; }
