@@ -1,19 +1,49 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 class App extends Component {
+  state={
+    navIsOpen:'',
+    active:'',
+  }
+  openNav=()=>{
+    this.setState({
+      navIsOpen: this.state.navIsOpen == ''?'open':'',
+      active: this.state.active == ''?'active':''
+
+  })
+  }
+  closeNav=()=>{
+    this.setState({
+      navIsOpen: '',
+      active:''
+    })
+  }
   render() {
+    let { 
+      navIsOpen,
+      active
+
+    
+    } = this.state
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Router >
+          <div>
+          <Header
+            navIsOpen={navIsOpen}
+            active={active}
+            openNav={this.openNav}
+            closeNav={this.closeNav}
+          />
+
+            test
+          </div>
+      </Router>
       </div>
+
     );
   }
 }
