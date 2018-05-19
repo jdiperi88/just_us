@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import Header from './components/Header';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import MainPageCarousel from './components/MainPageCarousel';
 
 class App extends Component {
   state={
@@ -37,6 +38,16 @@ class App extends Component {
             active={active}
             openNav={this.openNav}
             closeNav={this.closeNav}
+          />
+          < MainPageCarousel 
+            images = {['untitled-5','untitled-6']}
+            settings = {{
+                className: "center",
+                centerMode: true,
+                infinite: true,
+                slidesToShow: 1,
+                speed: 500,
+            }}
           />
 
             test
