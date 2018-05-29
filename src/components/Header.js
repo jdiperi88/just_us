@@ -14,6 +14,7 @@ class Header extends Component {
                     <div className="row">
                     </div>
                     <div className="row logobox">
+                        <h1>Joey & Saida </h1>
                     </div>
                     {/* <div className="row menu-box">
                         <div className="menu-button"></div>

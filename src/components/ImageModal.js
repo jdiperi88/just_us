@@ -20,7 +20,7 @@ render() {
         >
           <div className="main_modal_image">
                 <div className='col'>
-                    <img className="modal_image_item" src={image!== '' ? require(`../images/highlights/untitled-${image}.jpg`) : ''} alt={"product-image"} width="300px"></img>
+                    <img className="modal_image_item" src={image!== '' ? require(`../images/highlights/${image}`) : ''} alt={"product-image"} width="300px"></img>
                 </div>
                 <div className='close-modal' onClick={()=>closeModal()}>X</div>
            

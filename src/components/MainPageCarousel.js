@@ -42,12 +42,12 @@ class MainPageCarousel extends React.Component {
     return (
       <div className='container main_carousel'>
       <Slider {...settings}>
-        {images.map((slide, i) => {
+        {images && images.map((image, i) => {
           return (
             <div key={i}>
              <img onClick={()=>{
-               openImageModal(slide);
-             }}  src={require(`../images/highlights/untitled-${slide}.jpg`)} />
+               openImageModal(image.image_name);
+             }}  src={require(`../images/highlights/${image.image_name}`)} />
             </div>
           );
         })}
