@@ -1,0 +1,13 @@
+.main_carousel{
+    & img {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+.main_background{
+    background: url('../images/highlights/joey_saida_boat15.jpg');
+    background-size: cover;
+    width: 100%;
+    min-height: 120vh;
+    overflow: hidden;
+}

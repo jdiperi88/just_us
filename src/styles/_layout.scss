@@ -1,0 +1,19 @@
+//layout
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 50vh;
+}
+
+
+.row{
+    display: flex;
+    justify-content: center;
+}
+
+
+.col{
+    display: flex;
+    flex-direction: column;
+}
+

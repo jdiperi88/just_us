@@ -1,14 +1,16 @@
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/css?family=Pacifico);
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css?family=Great+Vibes");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline;
-  text-decoration: none;
-  list-style: none; }
+  vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -40,13 +42,13 @@ table {
   display: block;
   box-sizing: border-box;
   -webkit-user-select: none;
-    -webkit-user-select--moz-user-select: none;
-      -webkit-user-select--moz-user-select--ms-user-select: none;
-        -webkit-user-select--moz-user-select--ms-user-select-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   -webkit-touch-callout: none;
   -khtml-user-select: none;
   -ms-touch-action: pan-y;
-    -ms-touch-action-touch-action: pan-y;
+  touch-action: pan-y;
   -webkit-tap-highlight-color: transparent; }
 
 .slick-list {
@@ -66,10 +68,10 @@ table {
 .slick-slider .slick-track,
 .slick-slider .slick-list {
   -webkit-transform: translate3d(0, 0, 0);
-    -webkit-transform--moz-transform: translate3d(0, 0, 0);
-      -webkit-transform--moz-transform--ms-transform: translate3d(0, 0, 0);
-        -webkit-transform--moz-transform--ms-transform--o-transform: translate3d(0, 0, 0);
-          -webkit-transform--moz-transform--ms-transform--o-transform-transform: translate3d(0, 0, 0); }
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
 
 .slick-track {
   position: relative;
@@ -284,7 +286,7 @@ table {
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1000; }
 
-.close-modal {
+.close-moda {
   color: #b7b7b7;
   position: absolute;
   top: 0;
@@ -371,7 +373,7 @@ table {
   left: 50%; }
 
 .navbar {
-  background: #9932CC;
+  background: rgba(0, 0, 0, 0.4);
   justify-content: center;
   position: relative;
   display: flex;
@@ -388,14 +390,14 @@ table {
   display: none; }
   .nav-menu > a {
     width: 100%; }
-    .nav-menu > a li {
-      border-bottom: solid white;
-      padding: 2.5%;
-      text-align: center;
-      color: white;
-      text-transform: uppercase; }
-    .nav-menu > a {
-      border-bottom: none; }
+  .nav-menu li {
+    border-bottom: solid white;
+    padding: 2.5%;
+    text-align: center;
+    color: white;
+    text-transform: uppercase; }
+  .nav-menu {
+    border-bottom: none; }
 
 .active {
   display: block; }
@@ -407,9 +409,21 @@ table {
   flex: 1; }
 
 h1 {
-  font-family: 'Pacifco';
-  font-size: 5rem; }
+  font-family: 'Great Vibes';
+  font-size: 3rem;
+  color: white; }
+
+.date {
+  justify-content: center;
+  align-items: center; }
 
 .main_carousel img {
   width: 50%;
   margin: 0 auto; }
+
+.main_background {
+  background: url("../images/highlights/joey_saida_boat15.jpg");
+  background-size: cover;
+  width: 100%;
+  min-height: 120vh;
+  overflow: hidden; }

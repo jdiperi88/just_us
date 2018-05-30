@@ -41,6 +41,35 @@ class MainPageCarousel extends React.Component {
     let { images, imagesDisplayed, settings, openImageModal} = this.props
     return (
       <div className='container main_carousel'>
+                <select onChange={(e)=>{
+              this.handleSelectPerson(e)
+          }}>
+              <option value="All" disabled selected value>Move to...</option>
+              <option value="Joey">Joey</option>
+              <option value="Saida">Saida</option>
+              <option value="MJ">MJ</option>
+              <option value="Pam">Pam</option>
+              <option value="John">John</option>
+              <option value="Oswaldo">Oswaldo</option>
+              <option value="Cricket">Cricket</option>
+              <option value="Dilobar">Dilobar</option>
+              <option value="Umid">Umid</option>
+              <option value="Onajon">Onajon</option>
+              <option value="Jasur">Jasur</option>
+              <option value="Ziyoda">Ziyoda</option>
+              <option value="Ulugbek">Ulugbek</option>
+              <option value="Kryssy">Kryssy</option>
+              <option value="Tiffany">Tiffany</option>
+              <option value="Joban">Joban</option>
+              <option value="Kenny">Kenny</option>
+              <option value="Tyrone">Tyrone</option>
+              <option value="Allison">Allison</option>
+              <option value="Princie">Princie</option>
+              <option value="Danielle">Danielle</option>
+              <option value="Scott">Scott</option>
+              <option value="Bailey">Bailey</option>
+              <option value="Raj">Raj</option>
+          </select>
       <Slider {...settings}>
         {images && images.map((image, i) => {
           return (
