@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+import Header from "./Header";
 
 // function SamplePrevArrow(props) {
 //     const { className, style, onClick } = props;
@@ -34,8 +35,7 @@ class MainPageCarousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      nav1: null,
-      nav2: null
+      currentImage : 'cake_boat1.jpg'
     };
   }
 
@@ -45,47 +45,80 @@ class MainPageCarousel extends React.Component {
       nav2: this.slider2
     });
   }
+
+  currentImageHandler = (image) =>{
+    this.setState({
+      currentImage:image
+    })
+  }
   render() {
-    let { images, imagesDisplayed, settings, openImageModal, handleSelectPerson} = this.props
+    let { 
+      images, 
+      imagesDisplayed, 
+      settings,
+      openImageModal, 
+      handleSelectPerson,
+      navIsOpen, 
+      active,
+      openNav, 
+      closeNav
+    } = this.props
+    let {
+      currentImage
+    } = this.state
     return (
       <div className='main_carousel'>
-        <div className='overlay'>
+        <div className='carousel_overlay'>
+        <Header
+          navIsOpen={navIsOpen}
+          active={active}
+          openNav={openNav}
+          closeNav={closeNav}
+        />
+        <select onChange={(e)=>{
+            handleSelectPerson(e)
+        }}>
+            <option value="All" disabled selected value>Select Person</option>
+            <option value="Joey">Joey</option>
+            <option value="Saida">Saida</option>
+            <option value="MJ">MJ</option>
+            <option value="Pam">Pam</option>
+            <option value="John">John</option>
+            <option value="Oswaldo">Oswaldo</option>
+            <option value="Cricket">Cricket</option>
+            <option value="Dilobar">Dilobar</option>
+            <option value="Umid">Umid</option>
+            <option value="Onajon">Onajon</option>
+            <option value="Jasur">Jasur</option>
+            <option value="Ziyoda">Ziyoda</option>
+            <option value="Ulugbek">Ulugbek</option>
+            <option value="Kryssy">Kryssy</option>
+            <option value="Tiffany">Tiffany</option>
+            <option value="Joban">Joban</option>
+            <option value="Kenny">Kenny</option>
+            <option value="Tyrone">Tyrone</option>
+            <option value="Allison">Allison</option>
+            <option value="Princie">Princie</option>
+            <option value="Danielle">Danielle</option>
+            <option value="Scott">Scott</option>
+            <option value="Bailey">Bailey</option>
+            <option value="Raj">Raj</option>
+        </select>
+        { currentImage && 
+        <div className='current_image_container'>
+        <img onClick={()=>{
+          this.currentImageHandler(currentImage);
+        }}  src={require(`../images/highlights/${currentImage}`)} />
+        </div>
+      }
           <div className='container'>
-                <select onChange={(e)=>{
-                  handleSelectPerson(e)
-              }}>
-                  <option value="All" disabled selected value>Move to...</option>
-                  <option value="Joey">Joey</option>
-                  <option value="Saida">Saida</option>
-                  <option value="MJ">MJ</option>
-                  <option value="Pam">Pam</option>
-                  <option value="John">John</option>
-                  <option value="Oswaldo">Oswaldo</option>
-                  <option value="Cricket">Cricket</option>
-                  <option value="Dilobar">Dilobar</option>
-                  <option value="Umid">Umid</option>
-                  <option value="Onajon">Onajon</option>
-                  <option value="Jasur">Jasur</option>
-                  <option value="Ziyoda">Ziyoda</option>
-                  <option value="Ulugbek">Ulugbek</option>
-                  <option value="Kryssy">Kryssy</option>
-                  <option value="Tiffany">Tiffany</option>
-                  <option value="Joban">Joban</option>
-                  <option value="Kenny">Kenny</option>
-                  <option value="Tyrone">Tyrone</option>
-                  <option value="Allison">Allison</option>
-                  <option value="Princie">Princie</option>
-                  <option value="Danielle">Danielle</option>
-                  <option value="Scott">Scott</option>
-                  <option value="Bailey">Bailey</option>
-                  <option value="Raj">Raj</option>
-              </select>
+
           <Slider {...settings}>
             {images && images.map((image, i) => {
               return (
                 <div key={i}>
                 <img onClick={()=>{
-                  openImageModal(image.image_name);
+                  this.currentImageHandler(image.image_name);
                 }}  src={require(`../images/highlights/${image.image_name}`)} />
                 </div>
               );

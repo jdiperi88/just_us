@@ -107,13 +107,18 @@ class App extends Component {
                       className: "center",
                       centerMode: true,
                       infinite: true,
-                      slidesToShow: 1,
+                      slidesToShow: 4,
                       speed: 1500,
                       autoplay:true,
                       autoplaySpeed: 4000,
+                      adaptiveHeight: true,
                   }}
                   handleSelectPerson={this.handleSelectPerson}
                   openImageModal={this.openImageModal}
+                  navIsOpen={navIsOpen}
+                  active={active}
+                  openNav={this.openNav}
+                  closeNav={this.closeNav}
                 />)} 
           />
             </Switch>
