@@ -10,16 +10,17 @@ class Header extends Component {
             closeNav
         } = this.props
         return(
-                <div className="navbar">
-                    <div className="row date">
-                        <h1>March 30th, 2018 </h1>
+                <header className="navbar">
+                    <div className="date">
+                        <h2>March 30th, 2018 </h2>
                     </div>
-                    <div className="row logobox">
+                    <div className="logobox">
                         <h1>Joey & Saida </h1>
                     </div>
                     {/* <div className="row menu-box">
                         <div className="menu-button"></div>
                     </div> */}
+                <div className='test'>
                     <div className={navIsOpen} id='nav-icon' 
                         onClick={()=>{
                             openNav();
@@ -38,6 +39,7 @@ class Header extends Component {
                     {/* <div className='dropdown-overlay'>
                     </div> */}
                 </div>
+                </header>
                 
         )
     } 

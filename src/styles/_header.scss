@@ -11,7 +11,7 @@
     -o-transition: .5s ease-in-out;
     transition: .5s ease-in-out;
     cursor: pointer;
-    background: rgba(0, 0, 0, 0.2);
+    // background: rgba(0, 0, 0, 0.2);
 }
   
 //hamburger menu
@@ -21,7 +21,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    // background-color: rgba(0, 0, 0, 0.7);
     z-index: 1000;
 }
   
@@ -89,7 +89,6 @@
 }
 .navbar{
     background: $navbar;
-    justify-content: center;
     position: relative;
     display: flex;
     height: 10vh;
@@ -128,19 +127,34 @@
 
 
 //logos
-.logobox{
-    justify-content: center;
+.navbar{
     align-items: center;
-    padding: 7px 0;
-    flex: 1;
+    & .logobox{
+        justify-content: center;
+        align-items: center;
+        padding: 7px 0;
+        flex: 1;
+    }
+    & h1{
+        font-family: 'Great Vibes';
+        font-size: 3rem;
+        color: white;
+        text-align: center;
+    }
+    & h2{
+        font-family: 'Great Vibes';
+        font-size: 2rem;
+        color: white;
+    }
+    & .date{
+        justify-content: center;
+        align-items: center;
+        padding-left: 10px;
+    }
+    & .test{
+        align-self: flex-end;
+    }
+
 }
-h1{
-    font-family: 'Great Vibes';
-    font-size: 3rem;
-    color: white;
-}
-.date{
-    justify-content: center;
-    align-items: center;
-}
+
 

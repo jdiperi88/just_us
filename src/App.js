@@ -112,6 +112,7 @@ class App extends Component {
                       autoplay:true,
                       autoplaySpeed: 4000,
                   }}
+                  handleSelectPerson={this.handleSelectPerson}
                   openImageModal={this.openImageModal}
                 />)} 
           />
