@@ -450,3 +450,5 @@ table {
   padding: 20px; }
   .current_image_container img {
     width: 50%; }
+  .current_image_container .vertical_image {
+    width: 25%; }

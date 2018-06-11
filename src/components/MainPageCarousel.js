@@ -35,7 +35,8 @@ class MainPageCarousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentImage : 'cake_boat1.jpg'
+      currentImage : 'cake_boat1.jpg',
+      verticalImage: ''
     };
   }
 
@@ -46,9 +47,10 @@ class MainPageCarousel extends React.Component {
     });
   }
 
-  currentImageHandler = (image) =>{
+  currentImageHandler = (image,vertical) =>{
     this.setState({
-      currentImage:image
+      currentImage:image,
+      verticalImage: vertical
     })
   }
   render() {
@@ -64,7 +66,8 @@ class MainPageCarousel extends React.Component {
       closeNav
     } = this.props
     let {
-      currentImage
+      currentImage,
+      verticalImage
     } = this.state
     return (
       <div className='main_carousel'>
@@ -106,9 +109,13 @@ class MainPageCarousel extends React.Component {
         </select>
         { currentImage && 
         <div className='current_image_container'>
-        <img onClick={()=>{
-          this.currentImageHandler(currentImage);
-        }}  src={require(`../images/highlights/${currentImage}`)} />
+        <img 
+          onClick={()=>{
+            this.currentImageHandler(currentImage);
+          }}  
+          src={require(`../images/highlights/${currentImage}`)} 
+          className={verticalImage?'vertical_image':''}
+          />
         </div>
       }
           <div className='container'>
@@ -117,9 +124,13 @@ class MainPageCarousel extends React.Component {
             {images && images.map((image, i) => {
               return (
                 <div key={i}>
-                <img onClick={()=>{
-                  this.currentImageHandler(image.image_name);
-                }}  src={require(`../images/highlights/${image.image_name}`)} />
+                  <img 
+                  onClick={()=>{
+                      this.currentImageHandler(image.image_name,image.vertical);
+                    }}  
+                    src={require(`../images/highlights/${image.image_name}`)}
+                    className='vertical_image' 
+                   />
                 </div>
               );
             })}
